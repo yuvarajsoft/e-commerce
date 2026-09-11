@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../environments/environment';
+import { Iproduct } from '../app/iproduct';
 
 
 @Injectable({
@@ -11,6 +12,6 @@ export class Product {
    private apiUrl = `${environment.apiUrl}/GetAllProducts`;
   getAllproduct()
   {
-    return this.http.get(this.apiUrl)
+    return this.http.get<Iproduct[]>(this.apiUrl)
   }
 }

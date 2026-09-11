@@ -270,75 +270,62 @@
         </section>
 
 
-        <!-- ================= SERVICE SECTION ================= -->
-        <section class="container py-3">
+      <!-- ================= CATEGORY SECTION ================= -->
+<section class="container py-4">
 
-            <div class="row row-cols-2 row-cols-md-4
-                        border rounded-4 overflow-hidden">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="fw-bold mb-0">Shop by Category</h4>
 
-                <div class="col p-4 border-end">
+        <a href="#" class="text-success fw-semibold text-decoration-none">
+            View All
+        </a>
+    </div>
 
-                    <i class="bi bi-truck fs-2 text-success"></i>
+    <div class="d-flex flex-wrap gap-2">
 
-                    <h6 class="fw-bold mt-2">
-                        Fast Delivery
-                    </h6>
+        <a href="#"
+           class="btn btn-light border rounded-pill px-4 py-2 fw-semibold">
+            Fruits & Vegetables
+        </a>
 
-                    <small class="text-secondary">
-                        Quick doorstep delivery
-                    </small>
+        <a href="#"
+           class="btn btn-light border rounded-pill px-4 py-2 fw-semibold">
+            Dairy & Bakery
+        </a>
 
-                </div>
+        <a href="#"
+           class="btn btn-light border rounded-pill px-4 py-2 fw-semibold">
+            Beverages
+        </a>
 
+        <a href="#"
+           class="btn btn-light border rounded-pill px-4 py-2 fw-semibold">
+            Snacks
+        </a>
 
-                <div class="col p-4 border-end">
+        <a href="#"
+           class="btn btn-light border rounded-pill px-4 py-2 fw-semibold">
+            Rice & Grains
+        </a>
 
-                    <i class="bi bi-patch-check fs-2 text-success"></i>
+        <a href="#"
+           class="btn btn-light border rounded-pill px-4 py-2 fw-semibold">
+            Masala & Spices
+        </a>
 
-                    <h6 class="fw-bold mt-2">
-                        Fresh Quality
-                    </h6>
+        <a href="#"
+           class="btn btn-light border rounded-pill px-4 py-2 fw-semibold">
+            Personal Care
+        </a>
 
-                    <small class="text-secondary">
-                        Fresh and trusted products
-                    </small>
+        <a href="#"
+           class="btn btn-light border rounded-pill px-4 py-2 fw-semibold">
+            Household
+        </a>
 
-                </div>
+    </div>
 
-
-                <div class="col p-4 border-end">
-
-                    <i class="bi bi-shield-check fs-2 text-success"></i>
-
-                    <h6 class="fw-bold mt-2">
-                        Secure Payment
-                    </h6>
-
-                    <small class="text-secondary">
-                        Safe & secure checkout
-                    </small>
-
-                </div>
-
-
-                <div class="col p-4">
-
-                    <i class="bi bi-arrow-repeat fs-2 text-success"></i>
-
-                    <h6 class="fw-bold mt-2">
-                        Easy Returns
-                    </h6>
-
-                    <small class="text-secondary">
-                        Simple return process
-                    </small>
-
-                </div>
-
-            </div>
-
-        </section>
-
+</section>
         <!-- ================= PRODUCTS ================= -->
         <section class="container pb-5">
 
@@ -371,20 +358,20 @@
             <div class="row row-cols-2 row-cols-md-3
                         row-cols-lg-5 g-4">
 
-
-                <!-- Product 1 -->
+<div class="col" *ngFor="let pro of products">
+ <!-- Product 1 -->
                 <div class="col">
 
                     <div class="card h-100 rounded-4 overflow-hidden">
 
                         <div class="position-relative">
 
-                            <span class="badge bg-success position-absolute
+                            <!-- <span class="badge bg-success position-absolute
                                          top-0 start-0 m-2">
 
                                 15% OFF
 
-                            </span>
+                            </span> -->
 
                             <button class="btn btn-light
                                            position-absolute top-0 end-0 m-2
@@ -394,9 +381,9 @@
 
                             </button>
 
-                            <img src="https://images.unsplash.com/photo-1601039641847-7857b994d704?auto=format&fit=crop&w=500&q=80"
+                            <img [src]="pro.productImageUrl"
                                  class="card-img-top"
-                                 alt="Avocado">
+                                 [alt]="pro.productName">
 
                         </div>
 
@@ -404,22 +391,20 @@
                         <div class="card-body">
 
                             <h6 class="fw-bold">
-                                Fresh Avocados
+                               {{pro.productName}}
                             </h6>
 
-                            <small class="text-secondary">
+                            <!-- <small class="text-secondary">
                                 500 g
-                            </small>
+                            </small> -->
 
                             <div class="mt-2">
 
                                 <strong>
-                                    ₹149
+                                   {{ pro.productPrice | currency:'INR':'symbol':'1.0-0':'en-IN' }}
                                 </strong>
 
-                                <del class="text-secondary small">
-                                    ₹175
-                                </del>
+                              
 
                             </div>
 
@@ -435,255 +420,8 @@
                     </div>
 
                 </div>
+</div>  
 
-
-                <!-- Product 2 -->
-                <div class="col">
-
-                    <div class="card h-100 rounded-4 overflow-hidden">
-
-                        <div class="position-relative">
-
-                            <span class="badge bg-success position-absolute
-                                         top-0 start-0 m-2">
-
-                                20% OFF
-
-                            </span>
-
-                            <button class="btn btn-light
-                                           position-absolute top-0 end-0 m-2
-                                           rounded-circle">
-
-                                <i class="bi bi-heart"></i>
-
-                            </button>
-
-                            <img src="https://images.unsplash.com/photo-1445282768818-728615cc910a?auto=format&fit=crop&w=500&q=80"
-                                 class="card-img-top"
-                                 alt="Carrots">
-
-                        </div>
-
-
-                        <div class="card-body">
-
-                            <h6 class="fw-bold">
-                                Organic Carrots
-                            </h6>
-
-                            <small class="text-secondary">
-                                1 kg
-                            </small>
-
-                            <div class="mt-2">
-
-                                <strong>
-                                    ₹80
-                                </strong>
-
-                                <del class="text-secondary small">
-                                    ₹100
-                                </del>
-
-                            </div>
-
-                            <button class="btn btn-outline-success
-                                           btn-sm w-100 mt-3">
-
-                                Add to Cart
-
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Product 3 -->
-                <div class="col">
-
-                    <div class="card h-100 rounded-4 overflow-hidden">
-
-                        <div class="position-relative">
-
-                            <button class="btn btn-light
-                                           position-absolute top-0 end-0 m-2
-                                           rounded-circle">
-
-                                <i class="bi bi-heart"></i>
-
-                            </button>
-
-                            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=80"
-                                 class="card-img-top"
-                                 alt="Bread">
-
-                        </div>
-
-
-                        <div class="card-body">
-
-                            <h6 class="fw-bold">
-                                Whole Wheat Bread
-                            </h6>
-
-                            <small class="text-secondary">
-                                400 g
-                            </small>
-
-                            <div class="mt-2">
-
-                                <strong>
-                                    ₹55
-                                </strong>
-
-                            </div>
-
-                            <button class="btn btn-outline-success
-                                           btn-sm w-100 mt-3">
-
-                                Add to Cart
-
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Product 4 -->
-                <div class="col">
-
-                    <div class="card h-100 rounded-4 overflow-hidden">
-
-                        <div class="position-relative">
-
-                            <span class="badge bg-success position-absolute
-                                         top-0 start-0 m-2">
-
-                                10% OFF
-
-                            </span>
-
-                            <button class="btn btn-light
-                                           position-absolute top-0 end-0 m-2
-                                           rounded-circle">
-
-                                <i class="bi bi-heart"></i>
-
-                            </button>
-
-                            <img src="https://images.unsplash.com/photo-1536518118089-8f1e5d5c7c93?auto=format&fit=crop&w=500&q=80"
-                                 class="card-img-top"
-                                 alt="Almonds">
-
-                        </div>
-
-
-                        <div class="card-body">
-
-                            <h6 class="fw-bold">
-                                Premium Almonds
-                            </h6>
-
-                            <small class="text-secondary">
-                                250 g
-                            </small>
-
-                            <div class="mt-2">
-
-                                <strong>
-                                    ₹199
-                                </strong>
-
-                                <del class="text-secondary small">
-                                    ₹220
-                                </del>
-
-                            </div>
-
-                            <button class="btn btn-outline-success
-                                           btn-sm w-100 mt-3">
-
-                                Add to Cart
-
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Product 5 -->
-                <div class="col">
-
-                    <div class="card h-100 rounded-4 overflow-hidden">
-
-                        <div class="position-relative">
-
-                            <span class="badge bg-success position-absolute
-                                         top-0 start-0 m-2">
-
-                                12% OFF
-
-                            </span>
-
-                            <button class="btn btn-light
-                                           position-absolute top-0 end-0 m-2
-                                           rounded-circle">
-
-                                <i class="bi bi-heart"></i>
-
-                            </button>
-
-                            <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=500&q=80"
-                                 class="card-img-top"
-                                 alt="Milk">
-
-                        </div>
-
-
-                        <div class="card-body">
-
-                            <h6 class="fw-bold">
-                                Fresh Farm Milk
-                            </h6>
-
-                            <small class="text-secondary">
-                                1 Litre
-                            </small>
-
-                            <div class="mt-2">
-
-                                <strong>
-                                    ₹62
-                                </strong>
-
-                                <del class="text-secondary small">
-                                    ₹70
-                                </del>
-
-                            </div>
-
-                            <button class="btn btn-outline-success
-                                           btn-sm w-100 mt-3">
-
-                                Add to Cart
-
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
 
             </div>
 
