@@ -298,3 +298,42 @@
     }
 
 }
+
+
+.user-menu {
+    position: absolute;
+    top: 58px;
+    right: -20px;
+    width: 240px;
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    z-index: 1050;
+    text-align: left;
+}
+
+.user-menu .fw-semibold {
+    font-size: 15px;
+    color: #212529;
+}
+
+.user-menu .text-muted {
+    font-size: 13px;
+}
+
+.user-menu button {
+    font-size: 14px;
+}
+
+.account-btn {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    color: #212529;
+}
+
+.account-btn:hover {
+    color: #198754;
+}

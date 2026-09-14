@@ -63,57 +63,122 @@
 
 
                 <!-- Actions -->
-                <div class="col-6 col-lg-3 order-2 order-lg-3">
+                <!-- Actions -->
+<div class="col-6 col-lg-3 order-2 order-lg-3">
 
-                    <div class="d-flex justify-content-end gap-4">
+    <div class="d-flex justify-content-end gap-4">
 
-                        <!-- Account -->
-                        <a routerLink="/login" class="text-dark text-decoration-none text-center">
+<!-- Account -->
+<div class="text-center position-relative">
 
-                            <i class="bi bi-person fs-4 d-block"></i>
+    <!-- IF user is logged in -->
+    <ng-container *ngIf="user; else login">
 
-                            <small class="d-none d-md-block">
-                                Account
-                            </small>
+        <button
+            type="button"
+            class="account-btn"
+            (click)="showUserMenu = !showUserMenu">
 
-                        </a>
+            <i class="bi bi-person-circle fs-4 d-block"></i>
 
+            <small class="d-none d-md-block">
+                {{ user.name }}
+            </small>
 
-                        <!-- Wishlist -->
-                        <a href="#" class="text-dark text-decoration-none text-center">
+        </button>
 
-                            <i class="bi bi-heart fs-4 d-block"></i>
+        <!-- User Details -->
+        <div
+            *ngIf="showUserMenu"
+            class="user-menu">
 
-                            <small class="d-none d-md-block">
-                                Wishlist
-                            </small>
+            <div class="mb-3">
+                <i class="bi bi-person-circle fs-3 text-success"></i>
 
-                        </a>
-
-
-                        <!-- Cart -->
-                        <a href="#" data-bs-toggle="offcanvas"
-    data-bs-target="#cartOffcanvas" class="text-dark text-decoration-none text-center position-relative">
-
-                            <i class="bi bi-bag fs-4 d-block"></i>
-
-                            <small class="d-none d-md-block">
-                                Cart
-                            </small>
-
-                            <span class="position-absolute top-0 start-100
-                                         translate-middle badge rounded-pill bg-success">
-
-                                {{cartdetails().length}}
-
-                            </span>
-
-                        </a>
-
-                    </div>
-
+                <div class="fw-semibold mt-2">
+                    {{ user.name }}
                 </div>
 
+                <small class="text-muted">
+                    {{ user.email }}
+                </small>
+            </div>
+
+            <button
+                type="button"
+                class="btn btn-outline-danger btn-sm w-100"
+                (click)="logout()">
+
+                <i class="bi bi-box-arrow-right me-2"></i>
+                Logout
+
+            </button>
+
+        </div>
+
+    </ng-container>
+
+
+    <!-- ELSE user is NOT logged in -->
+    <ng-template #login>
+
+        <a
+            routerLink="/login"
+            class="text-dark text-decoration-none">
+
+            <i class="bi bi-person fs-4 d-block"></i>
+
+            <small class="d-none d-md-block">
+                Login
+            </small>
+
+        </a>
+
+    </ng-template>
+
+</div>
+        
+
+
+        <!-- Wishlist -->
+        <a
+            href="#"
+            class="text-dark text-decoration-none text-center">
+
+            <i class="bi bi-heart fs-4 d-block"></i>
+
+            <small class="d-none d-md-block">
+                Wishlist
+            </small>
+
+        </a>
+
+
+        <!-- Cart -->
+        <a
+            href="#"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#cartOffcanvas"
+            class="text-dark text-decoration-none text-center position-relative">
+
+            <i class="bi bi-bag fs-4 d-block"></i>
+
+            <small class="d-none d-md-block">
+                Cart
+            </small>
+
+            <span
+                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
+
+                {{ cartdetails().length }}
+
+            </span>
+
+        </a>
+
+    </div>
+
+</div>
             </div>
 
         </div>
@@ -122,7 +187,7 @@
 
 
     <!-- ================= CATEGORY NAVIGATION ================= -->
-    <nav class="border-bottom bg-white">
+    <!-- <nav class="border-bottom bg-white">
 
         <div class="container">
 
@@ -168,7 +233,7 @@
 
         </div>
 
-    </nav>
+    </nav> -->
 
 
     <main>
@@ -609,27 +674,55 @@
 
                 </div>
 
+<div class="col-6 col-lg-2">
 
-                <div class="col-6 col-lg-2">
+    <h6>
+        Customer
+    </h6>
 
-                    <h6>
-                        Customer
-                    </h6>
+    <!-- Logged In -->
+    <div *ngIf="user; else loginTemplate">
 
-                    <a routerLink="/login" class="d-block text-white-50 text-decoration-none mb-2">
-                        My Account
-                    </a>
+        <a routerLink="/profile"
+           class="d-block text-white-50 text-decoration-none mb-2">
+            <i class="bi bi-person-circle me-2"></i>
+            {{ user.name }}
+        </a>
 
-                    <a href="#" class="d-block text-white-50 text-decoration-none mb-2">
-                        My Orders
-                    </a>
+        <a routerLink="/orders"
+           class="d-block text-white-50 text-decoration-none mb-2">
+            <i class="bi bi-box-seam me-2"></i>
+            My Orders
+        </a>
 
-                    <a href="#" class="d-block text-white-50 text-decoration-none">
-                        Wishlist
-                    </a>
+        <a routerLink="/wishlist"
+           class="d-block text-white-50 text-decoration-none mb-2">
+            <i class="bi bi-heart me-2"></i>
+            Wishlist
+        </a>
 
-                </div>
+        <a href="javascript:void(0)"
+           (click)="logout()"
+           class="d-block text-white-50 text-decoration-none">
+            <i class="bi bi-box-arrow-right me-2"></i>
+            Logout
+        </a>
 
+    </div>
+
+
+    <!-- Not Logged In -->
+    <ng-template #loginTemplate>
+
+        <a routerLink="/login"
+           class="d-block text-white-50 text-decoration-none mb-2">
+            <i class="bi bi-box-arrow-in-right me-2"></i>
+            Login
+        </a>
+
+    </ng-template>
+
+</div>
 
                 <div class="col-lg-4">
 
@@ -963,7 +1056,7 @@
             </h5>
 
             <small class="text-muted">
-                3 items in your cart
+                   {{cartdetails().length}} items in your cart
             </small>
         </div>
 
@@ -1093,8 +1186,8 @@
 
         <!-- View Cart -->
         <button
-            type="button"
-            class="btn btn-success w-100">
+            type="button" 
+            class="btn btn-success w-100" (click)="gotocheckout()">
 
             <i class="bi bi-cart3 me-2"></i>
             View Cart

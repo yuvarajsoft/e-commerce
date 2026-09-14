@@ -498,3 +498,22 @@ body {
         font-size: 28px;
     }
 }
+
+/* new  */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+app-root {
+  display: block;
+  min-height: 100vh;
+}
+
+.checkout-page {
+  min-height: 100vh;
+}

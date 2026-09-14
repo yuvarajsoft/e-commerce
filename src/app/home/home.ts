@@ -1,24 +1,25 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { Product } from '../../services/product';
 import { Iproduct } from '../iproduct';
-import { CurrencyPipe, NgFor } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { CurrencyPipe, NgFor, NgIf } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 import { IAddCart, ICart, IResponse } from '../../constants/constants';
 import { Modal, Offcanvas } from 'bootstrap';
 
 @Component({
   selector: 'app-home',
-  imports: [NgFor, CurrencyPipe, RouterLink],
+  imports: [NgFor, CurrencyPipe, RouterLink,NgIf],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
 export class Home implements OnInit {
-  private user = JSON.parse(localStorage.getItem('user') || 'null')
+   user: any = JSON.parse(localStorage.getItem('user') || 'null');
   products = signal<Iproduct[]>([]);
-
+showUserMenu = false;
   category = signal<any[]>([]);
   cartdetails = signal<ICart[]>([]);
   selecttedProduct: Iproduct | null = null;
+  private route=inject(Router)
   addcartitems: IAddCart = {
     CartId: 0,
     CustId: 0,
@@ -29,7 +30,7 @@ export class Home implements OnInit {
   constructor(private productservice: Product) { }
 
   ngOnInit(): void {
-
+console.log(this.user)
 
     this.getallproduct();
     this.getallcategory();
@@ -195,5 +196,25 @@ this.productservice.removeCartBycartId(item.cartId).subscribe({
     0
   );
 
+}
+
+gotocheckout()
+{
+  this.route.navigate(['/checkout'],{
+    state:{
+      cartitem:this.cartdetails()
+    }
+  })
+}
+
+logout() {
+
+  localStorage.removeItem('user');
+
+  this.user = null;
+
+  this.showUserMenu = false;
+
+  this.route.navigate(['/login']);
 }
 }

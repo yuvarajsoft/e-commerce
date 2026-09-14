@@ -1,0 +1,363 @@
+<div class="checkout-page">
+
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg bg-white border-bottom checkout-navbar">
+    <div class="container">
+
+      <a class="navbar-brand fw-bold fs-3 text-dark">
+        <i class="bi bi-cart-check-fill text-success"></i>
+        ShopKart
+      </a>
+
+    
+
+     
+
+    </div>
+  </nav>
+
+
+  <!-- Checkout Steps -->
+  <div class="container py-4">
+
+    <div class="checkout-steps">
+
+      <div class="step active">
+        <div class="step-circle">
+          <i class="bi bi-check"></i>
+        </div>
+        <span>Cart</span>
+      </div>
+
+      <div class="step active">
+        <div class="step-circle">2</div>
+        <span>Confirmation</span>
+      </div>
+
+      <div class="step">
+        <div class="step-circle">3</div>
+        <span>Payment</span>
+      </div>
+
+      <div class="step">
+        <div class="step-circle">4</div>
+        <span>Order Placed</span>
+      </div>
+
+    </div>
+
+
+    <!-- Main Content -->
+    <div class="row g-4 mt-3">
+
+      <!-- LEFT SIDE -->
+      <div class="col-lg-8">
+
+        <h1 class="checkout-title">Order Confirmation</h1>
+
+        <p class="checkout-subtitle">
+          Please enter your details and review your order before proceeding to payment.
+        </p>
+
+
+        <!-- Personal Information -->
+        <div class="checkout-card">
+
+          <div class="card-heading">
+            <i class="bi bi-person-circle"></i>
+            <h5>Personal Information</h5>
+          </div>
+
+          <div class="row g-3">
+
+            <div class="col-md-6">
+              <label>First Name <span>*</span></label>
+              <div class="input-wrapper">
+                <i class="bi bi-person"></i>
+                <input type="text"
+                       class="form-control"
+                       placeholder="Enter first name">
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label>Last Name <span>*</span></label>
+              <div class="input-wrapper">
+                <i class="bi bi-person"></i>
+                <input type="text"
+                       class="form-control"
+                       placeholder="Enter last name">
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label>Email Address <span>*</span></label>
+              <div class="input-wrapper">
+                <i class="bi bi-envelope"></i>
+                <input type="email"
+                       class="form-control"
+                       placeholder="Enter email address">
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label>Phone Number <span>*</span></label>
+              <div class="input-wrapper">
+                <i class="bi bi-telephone"></i>
+                <input type="text"
+                       class="form-control"
+                       placeholder="Enter phone number">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Shipping Address -->
+        <div class="checkout-card">
+
+          <div class="card-heading">
+            <i class="bi bi-geo-alt-fill"></i>
+            <h5>Shipping Address</h5>
+          </div>
+
+          <div class="row g-3">
+
+            <div class="col-md-8">
+              <label>Address Line 1 <span>*</span></label>
+              <input type="text"
+                     class="form-control"
+                     placeholder="House No, Street Name">
+            </div>
+
+            <div class="col-md-4">
+              <label>Address Line 2</label>
+              <input type="text"
+                     class="form-control"
+                     placeholder="Apartment / Area">
+            </div>
+
+            <div class="col-md-4">
+              <label>City <span>*</span></label>
+              <input type="text"
+                     class="form-control"
+                     placeholder="City">
+            </div>
+
+            <div class="col-md-4">
+              <label>State <span>*</span></label>
+
+              <select class="form-select">
+                <option selected>Select State</option>
+                <option>Tamil Nadu</option>
+                <option>Kerala</option>
+                <option>Karnataka</option>
+                <option>Andhra Pradesh</option>
+                <option>Telangana</option>
+              </select>
+
+            </div>
+
+            <div class="col-md-4">
+              <label>Pincode <span>*</span></label>
+              <input type="text"
+                     class="form-control"
+                     placeholder="600001">
+            </div>
+
+          </div>
+
+
+          <div class="form-check mt-3">
+            <input class="form-check-input"
+                   type="checkbox"
+                   checked
+                   id="sameAddress">
+
+            <label class="form-check-label"
+                   for="sameAddress">
+              Billing address is same as shipping address
+            </label>
+          </div>
+
+        </div>
+
+
+        <!-- Delivery -->
+        <div class="checkout-card">
+
+          <div class="card-heading">
+            <i class="bi bi-truck"></i>
+            <h5>Delivery Method</h5>
+          </div>
+
+
+          <div class="delivery-option selected">
+
+            <div class="d-flex align-items-center gap-3">
+
+              <input type="radio"
+                     name="delivery"
+                     checked>
+
+              <div>
+                <strong>Standard Delivery</strong>
+                <small>3 - 5 business days</small>
+              </div>
+
+            </div>
+
+            <strong class="text-success">Free</strong>
+
+          </div>
+
+
+          <div class="delivery-option">
+
+            <div class="d-flex align-items-center gap-3">
+
+              <input type="radio"
+                     name="delivery">
+
+              <div>
+                <strong>Express Delivery</strong>
+                <small>1 - 2 business days</small>
+              </div>
+
+            </div>
+
+            <strong>₹99.00</strong>
+
+          </div>
+
+        </div>
+
+
+        <!-- Buttons -->
+        <div class="d-flex justify-content-between mt-4">
+
+          <button class="btn btn-outline-secondary back-btn" routerLink="/home">
+            <i class="bi bi-arrow-left"></i>
+            Back to Cart
+          </button>
+
+          <button class="btn btn-success proceed-btn">
+            Proceed to Payment
+            <i class="bi bi-arrow-right"></i>
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- RIGHT SIDE -->
+      <div class="col-lg-4">
+
+        <div class="checkout-card summary-card">
+
+          <div class="card-heading">
+            <i class="bi bi-cart3"></i>
+            <h5>Order Summary</h5>
+          </div>
+
+<div *ngFor="let item of cartItems">
+
+  <div class="product-item">
+
+    <img
+      [src]="item.productImageUrl"
+      class="product-image"
+      alt="{{ item.productName }}"
+    />
+
+    <div class="product-info">
+
+      <strong>{{ item.productName }}</strong>
+
+      <small>
+        Qty: {{ item.quantity }}
+      </small>
+
+    </div>
+
+    <strong>
+      ₹{{ item.productPrice * item.quantity }}
+    </strong>
+
+  </div>
+
+</div>
+
+        
+
+
+          <hr>
+
+
+          <div class="price-row">
+            <span>Shipping</span>
+            <span>Free</span>
+          </div>
+
+
+          <hr>
+
+
+          <div class="total-row">
+            <strong>Total Amount</strong>
+            <strong>₹{{getCartTotal()}}</strong>
+          </div>
+
+        </div>
+
+
+        <!-- Benefits -->
+        <div class="benefits">
+
+          <div class="benefit">
+            <div class="benefit-icon">
+              <i class="bi bi-truck"></i>
+            </div>
+
+            <div>
+              <strong>Free Shipping</strong>
+              <small>On orders above ₹499</small>
+            </div>
+          </div>
+
+
+          <div class="benefit">
+            <div class="benefit-icon">
+              <i class="bi bi-arrow-counterclockwise"></i>
+            </div>
+
+            <div>
+              <strong>Easy Returns</strong>
+              <small>7 days return policy</small>
+            </div>
+          </div>
+
+
+          <div class="benefit">
+            <div class="benefit-icon">
+              <i class="bi bi-shield-check"></i>
+            </div>
+
+            <div>
+              <strong>Secure Payment</strong>
+              <small>100% secure payments</small>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
