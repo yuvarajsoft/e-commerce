@@ -1,0 +1,200 @@
+<div class="auth-page">
+
+    <!-- Background circles -->
+    <div class="bg-circle circle-1"></div>
+    <div class="bg-circle circle-2"></div>
+    <div class="bg-circle circle-3"></div>
+    <div class="bg-circle circle-4"></div>
+
+
+    <div class="container auth-container">
+
+        <div class="auth-card">
+
+
+            <!-- ================= LEFT SIDE ================= -->
+
+            <div class="auth-left">
+
+                <div class="brand-logo">
+                    <i class="bi bi-bag-heart"></i>
+                    FreshMart
+                </div>
+
+                <div class="left-content">
+
+                    <h1 class="welcome-title">
+                        Welcome Back!
+                    </h1>
+
+                    <p class="welcome-text">
+                        To keep connected with us please login
+                        with your personal information.
+                    </p>
+
+                    <a routerLink="/login" class="btn login-outline-btn">
+
+                        Log In
+
+                    </a>
+
+                </div>
+
+                <div class="shopping-icon">
+                    <i class="bi bi-bag-heart"></i>
+                </div>
+
+            </div>
+
+
+            <!-- ================= RIGHT SIDE ================= -->
+
+            <div class="auth-right">
+
+                <div class="auth-form">
+
+                    <h2 class="form-title">
+                        Create Account
+                    </h2>
+
+                    <p class="form-subtitle">
+                        Join us and start your shopping journey
+                    </p>
+
+
+                    <!-- Social Login -->
+
+                    <div class="social-buttons">
+
+                        <button type="button" class="social-btn">
+                            <i class="bi bi-google"></i>
+                        </button>
+
+                        <button type="button" class="social-btn">
+                            <i class="bi bi-facebook"></i>
+                        </button>
+
+                        <button type="button" class="social-btn">
+                            <i class="bi bi-linkedin"></i>
+                        </button>
+
+                    </div>
+
+
+                    <!-- Divider -->
+
+                    <div class="divider">
+                        or register with email
+                    </div>
+                    <form [formGroup]="registerForm" (ngSubmit)="register()">
+
+                        <!-- Name -->
+
+                        <div class="input-group-custom">
+
+                            <i class="bi bi-person"></i>
+
+                            <input type="text" class="custom-input" placeholder="Full Name" formControlName="Name">
+
+                        </div>
+                        <div class="text-danger small mb-2" *ngIf="registerForm.get('Name')?.touched && registerForm.get('Name')?.invalid">
+                            <div *ngIf="registerForm.get('Name')?.errors?.['required']">
+                                Full Name is required.
+                            </div>
+                            <div *ngIf="registerForm.get('Name')?.errors?.['minlength']">
+                                Full Name must be at least 3 characters.
+                            </div>
+                        </div>
+
+                     <div class="input-group-custom">
+
+    <i class="bi bi-phone"></i>
+
+    <input type="text"
+           class="custom-input"
+           placeholder="Please enter mobile number"
+           formControlName="MobileNo">
+
+</div>
+
+<div class="text-danger small mb-2"
+     *ngIf="registerForm.get('MobileNo')?.touched &&
+            registerForm.get('MobileNo')?.invalid">
+
+    <div *ngIf="registerForm.get('MobileNo')?.errors?.['required']">
+        Mobile number is required.
+    </div>
+
+    <div *ngIf="registerForm.get('MobileNo')?.errors?.['minlength']">
+        Mobile number must be at least 10 digits.
+    </div>
+
+</div>
+
+                 
+                        <!-- Password -->
+
+                        <div class="input-group-custom">
+
+                            <i class="bi bi-lock"></i>
+
+                            <input type="password" class="custom-input" placeholder="Password" formControlName="Password">
+
+                        </div>
+
+<div class="text-danger small mb-2"
+     *ngIf="registerForm.get('Password')?.touched &&
+            registerForm.get('Password')?.invalid">
+
+    <div *ngIf="registerForm.get('Password')?.errors?.['required']">
+       Passwordr is required.
+    </div>
+
+    <div *ngIf="registerForm.get('Password')?.errors?.['minlength']">
+       Password be at least 6 digits.
+    </div>
+
+</div>
+                        <!-- Confirm Password -->
+
+                        <!-- <div class="input-group-custom">
+
+                        <i class="bi bi-shield-lock"></i>
+
+                        <input type="password"
+                               class="custom-input"
+                               placeholder="Confirm Password">
+
+                    </div> -->
+
+
+                        <!-- Register -->
+
+                        <button [disabled]="registerForm?.invalid" type="submit" class="submit-btn">
+
+                            Register
+
+                        </button>
+
+                    </form>
+                    <!-- Login -->
+
+                    <div class="bottom-text">
+
+                        Already have an account?
+
+                        <a routerLink="/login">
+                            Log In
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

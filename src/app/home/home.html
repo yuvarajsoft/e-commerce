@@ -1,23 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>FreshMart | Fresh Groceries</title>
 
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-          rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-          rel="stylesheet">
-</head>
-
-<body>
-
-    <!-- ================= HEADER ================= -->
     <header class="border-bottom bg-white">
 
         <div class="container py-3">
@@ -27,8 +9,7 @@
                 <!-- Logo -->
                 <div class="col-6 col-lg-2">
 
-                    <a href="#"
-                       class="text-decoration-none text-success fw-bold fs-4">
+                    <a href="#" class="text-decoration-none text-success fw-bold fs-4">
 
                         <i class="bi bi-leaf-fill me-2"></i>
                         FreshMart
@@ -67,9 +48,8 @@
 
                     <div class="input-group">
 
-                        <input type="text"
-                               class="form-control bg-light border-0 py-2"
-                               placeholder="Search for products...">
+                        <input type="text" class="form-control bg-light border-0 py-2"
+                            placeholder="Search for products...">
 
                         <button class="btn btn-light border-0">
 
@@ -88,8 +68,7 @@
                     <div class="d-flex justify-content-end gap-4">
 
                         <!-- Account -->
-                        <a href="#"
-                           class="text-dark text-decoration-none text-center">
+                        <a routerLink="/login" class="text-dark text-decoration-none text-center">
 
                             <i class="bi bi-person fs-4 d-block"></i>
 
@@ -101,8 +80,7 @@
 
 
                         <!-- Wishlist -->
-                        <a href="#"
-                           class="text-dark text-decoration-none text-center">
+                        <a href="#" class="text-dark text-decoration-none text-center">
 
                             <i class="bi bi-heart fs-4 d-block"></i>
 
@@ -114,8 +92,8 @@
 
 
                         <!-- Cart -->
-                        <a href="#"
-                           class="text-dark text-decoration-none text-center position-relative">
+                        <a href="#" data-bs-toggle="offcanvas"
+    data-bs-target="#cartOffcanvas" class="text-dark text-decoration-none text-center position-relative">
 
                             <i class="bi bi-bag fs-4 d-block"></i>
 
@@ -126,7 +104,7 @@
                             <span class="position-absolute top-0 start-100
                                          translate-middle badge rounded-pill bg-success">
 
-                                2
+                                {{cartdetails().length}}
 
                             </span>
 
@@ -150,48 +128,39 @@
 
             <div class="d-flex overflow-auto gap-4 py-3 text-nowrap">
 
-                <a href="#"
-                   class="text-success fw-semibold text-decoration-none">
+                <a href="#" class="text-success fw-semibold text-decoration-none">
                     Home
                 </a>
 
-                <a href="#"
-                   class="text-dark text-decoration-none">
+                <a href="#" class="text-dark text-decoration-none">
                     Fruits & Vegetables
                 </a>
 
-                <a href="#"
-                   class="text-dark text-decoration-none">
+                <a href="#" class="text-dark text-decoration-none">
                     Dairy & Eggs
                 </a>
 
-                <a href="#"
-                   class="text-dark text-decoration-none">
+                <a href="#" class="text-dark text-decoration-none">
                     Snacks & Beverages
                 </a>
 
-                <a href="#"
-                   class="text-dark text-decoration-none">
+                <a href="#" class="text-dark text-decoration-none">
                     Meat
                 </a>
 
-                <a href="#"
-                   class="text-dark text-decoration-none">
+                <a href="#" class="text-dark text-decoration-none">
                     Seafood
                 </a>
 
-                <a href="#"
-                   class="text-dark text-decoration-none">
+                <a href="#" class="text-dark text-decoration-none">
                     Bakery
                 </a>
 
-                <a href="#"
-                   class="text-dark text-decoration-none">
+                <a href="#" class="text-dark text-decoration-none">
                     Household
                 </a>
 
-                <a href="#"
-                   class="text-danger text-decoration-none fw-semibold">
+                <a href="#" class="text-danger text-decoration-none fw-semibold">
                     Deals
                 </a>
 
@@ -233,8 +202,7 @@
 
                     <div class="d-flex gap-2">
 
-                        <a href="#"
-                           class="btn btn-success px-4">
+                        <a href="#" class="btn btn-success px-4">
 
                             Shop Now
 
@@ -242,8 +210,7 @@
 
                         </a>
 
-                        <a href="#"
-                           class="btn btn-outline-success px-4">
+                        <a href="#" class="btn btn-outline-success px-4">
 
                             View Deals
 
@@ -260,8 +227,7 @@
                 <div class="col-lg-6">
 
                     <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1000&q=80"
-                         class="img-fluid w-100"
-                         alt="Fresh groceries">
+                        class="img-fluid w-100" alt="Fresh groceries">
 
                 </div>
 
@@ -270,62 +236,27 @@
         </section>
 
 
-      <!-- ================= CATEGORY SECTION ================= -->
-<section class="container py-4">
+        <!-- ================= CATEGORY SECTION ================= -->
+        <section class="container py-4">
 
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <h4 class="fw-bold mb-0">Shop by Category</h4>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="fw-bold mb-0">Shop by Category</h4>
 
-        <a href="#" class="text-success fw-semibold text-decoration-none">
-            View All
-        </a>
-    </div>
+                <!-- <a class="text-success fw-semibold text-decoration-none">
+                    View All
+                </a> -->
+            </div>
 
-    <div class="d-flex flex-wrap gap-2">
+            <div class="d-flex flex-wrap gap-2">
+                <a *ngFor="let item of category()" (click)="getAllCategoryById(item.categoryId)"
+                    class="btn btn-light border rounded-pill px-4 py-2 fw-semibold">
 
-        <a href="#"
-           class="btn btn-light border rounded-pill px-4 py-2 fw-semibold">
-            Fruits & Vegetables
-        </a>
+                    {{item.categoryName}}
+                </a>
 
-        <a href="#"
-           class="btn btn-light border rounded-pill px-4 py-2 fw-semibold">
-            Dairy & Bakery
-        </a>
+            </div>
 
-        <a href="#"
-           class="btn btn-light border rounded-pill px-4 py-2 fw-semibold">
-            Beverages
-        </a>
-
-        <a href="#"
-           class="btn btn-light border rounded-pill px-4 py-2 fw-semibold">
-            Snacks
-        </a>
-
-        <a href="#"
-           class="btn btn-light border rounded-pill px-4 py-2 fw-semibold">
-            Rice & Grains
-        </a>
-
-        <a href="#"
-           class="btn btn-light border rounded-pill px-4 py-2 fw-semibold">
-            Masala & Spices
-        </a>
-
-        <a href="#"
-           class="btn btn-light border rounded-pill px-4 py-2 fw-semibold">
-            Personal Care
-        </a>
-
-        <a href="#"
-           class="btn btn-light border rounded-pill px-4 py-2 fw-semibold">
-            Household
-        </a>
-
-    </div>
-
-</section>
+        </section>
         <!-- ================= PRODUCTS ================= -->
         <section class="container pb-5">
 
@@ -344,13 +275,14 @@
 
                 </div>
 
-                <a href="#"
-                   class="text-success text-decoration-none fw-semibold">
+               <button type="button"
+        (click)="getallproduct()"
+        class="btn btn-link text-success text-decoration-none fw-semibold p-0">
+    
+    View All
+    <i class="bi bi-arrow-right ms-1"></i>
 
-                    View All
-                    <i class="bi bi-arrow-right"></i>
-
-                </a>
+</button>
 
             </div>
 
@@ -358,69 +290,67 @@
             <div class="row row-cols-2 row-cols-md-3
                         row-cols-lg-5 g-4">
 
-<div class="col" *ngFor="let pro of products">
- <!-- Product 1 -->
-                <div class="col">
+                <div class="col" *ngFor="let pro of products()">
+                    <!-- Product 1 -->
+                    <div class="col">
 
-                    <div class="card h-100 rounded-4 overflow-hidden">
+                        <div class="card h-100 rounded-4 overflow-hidden">
 
-                        <div class="position-relative">
+                            <div class="position-relative">
 
-                            <!-- <span class="badge bg-success position-absolute
+                                <!-- <span class="badge bg-success position-absolute
                                          top-0 start-0 m-2">
 
                                 15% OFF
 
                             </span> -->
 
-                            <button class="btn btn-light
+                                <button class="btn btn-light
                                            position-absolute top-0 end-0 m-2
                                            rounded-circle">
 
-                                <i class="bi bi-heart"></i>
+                                    <i class="bi bi-heart"></i>
 
-                            </button>
+                                </button>
 
-                            <img [src]="pro.productImageUrl"
-                                 class="card-img-top"
-                                 [alt]="pro.productName">
-
-                        </div>
-
-
-                        <div class="card-body">
-
-                            <h6 class="fw-bold">
-                               {{pro.productName}}
-                            </h6>
-
-                            <!-- <small class="text-secondary">
-                                500 g
-                            </small> -->
-
-                            <div class="mt-2">
-
-                                <strong>
-                                   {{ pro.productPrice | currency:'INR':'symbol':'1.0-0':'en-IN' }}
-                                </strong>
-
-                              
+                                <img [src]="pro.productImageUrl" class="card-img-top" [alt]="pro.productName">
 
                             </div>
 
-                            <button class="btn btn-outline-success
-                                           btn-sm w-100 mt-3">
 
-                                Add to Cart
+                            <div class="card-body">
 
-                            </button>
+                                <h6 class="fw-bold">
+                                    {{pro.productName}}
+                                </h6>
+
+                                <!-- <small class="text-secondary">
+                                500 g
+                            </small> -->
+
+                                <div class="mt-2">
+
+                                    <strong>
+                                        {{ pro.productPrice | currency:'INR':'symbol':'1.0-0':'en-IN' }}
+                                    </strong>
+
+
+
+                                </div>
+
+                                <button (click)="addcart(pro)" class="btn btn-outline-success
+                                           btn-sm w-100 mt-3" data-bs-toggle="modal" data-bs-target="#cartModal">
+
+                                    Add to Cart
+
+                                </button>
+
+                            </div>
 
                         </div>
 
                     </div>
-
                 </div>
-</div>  
 
 
             </div>
@@ -535,8 +465,7 @@
                 <div class="col-lg-5">
 
                     <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80"
-                         class="img-fluid rounded-4"
-                         alt="Grocery shopping">
+                        class="img-fluid rounded-4" alt="Grocery shopping">
 
                 </div>
 
@@ -554,10 +483,8 @@
 
                             <h2 class="accordion-header">
 
-                                <button class="accordion-button"
-                                        type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#faqOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faqOne">
 
                                     How can I place an order?
 
@@ -565,8 +492,7 @@
 
                             </h2>
 
-                            <div id="faqOne"
-                                 class="accordion-collapse collapse show">
+                            <div id="faqOne" class="accordion-collapse collapse show">
 
                                 <div class="accordion-body">
 
@@ -584,8 +510,7 @@
 
                             <h2 class="accordion-header">
 
-                                <button class="accordion-button collapsed"
-                                        type="button">
+                                <button class="accordion-button collapsed" type="button">
 
                                     What payment methods do you accept?
 
@@ -600,8 +525,7 @@
 
                             <h2 class="accordion-header">
 
-                                <button class="accordion-button collapsed"
-                                        type="button">
+                                <button class="accordion-button collapsed" type="button">
 
                                     How long does delivery take?
 
@@ -616,8 +540,7 @@
 
                             <h2 class="accordion-header">
 
-                                <button class="accordion-button collapsed"
-                                        type="button">
+                                <button class="accordion-button collapsed" type="button">
 
                                     What is your return policy?
 
@@ -668,23 +591,19 @@
                         Quick Links
                     </h6>
 
-                    <a href="#"
-                       class="d-block text-white-50 text-decoration-none mb-2">
+                    <a href="#" class="d-block text-white-50 text-decoration-none mb-2">
                         Home
                     </a>
 
-                    <a href="#"
-                       class="d-block text-white-50 text-decoration-none mb-2">
+                    <a href="#" class="d-block text-white-50 text-decoration-none mb-2">
                         About Us
                     </a>
 
-                    <a href="#"
-                       class="d-block text-white-50 text-decoration-none mb-2">
+                    <a href="#" class="d-block text-white-50 text-decoration-none mb-2">
                         Categories
                     </a>
 
-                    <a href="#"
-                       class="d-block text-white-50 text-decoration-none">
+                    <a href="#" class="d-block text-white-50 text-decoration-none">
                         Deals
                     </a>
 
@@ -697,18 +616,15 @@
                         Customer
                     </h6>
 
-                    <a href="#"
-                       class="d-block text-white-50 text-decoration-none mb-2">
+                    <a routerLink="/login" class="d-block text-white-50 text-decoration-none mb-2">
                         My Account
                     </a>
 
-                    <a href="#"
-                       class="d-block text-white-50 text-decoration-none mb-2">
+                    <a href="#" class="d-block text-white-50 text-decoration-none mb-2">
                         My Orders
                     </a>
 
-                    <a href="#"
-                       class="d-block text-white-50 text-decoration-none">
+                    <a href="#" class="d-block text-white-50 text-decoration-none">
                         Wishlist
                     </a>
 
@@ -753,10 +669,448 @@
         </div>
 
     </footer>
+    <!-- ================= CART MODAL ================= -->
+    <div class="modal fade"
+     id="cartModal"
+     tabindex="-1"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+
+        <div class="modal-content border-0 rounded-4 shadow-lg overflow-hidden">
+
+            <!-- Header -->
+            <div class="modal-header border-0 px-4 pt-4 pb-2">
+
+                <div>
+                  
+
+                    <h4 class="fw-bold mb-0">
+                        Added to Cart
+                    </h4>
+
+                    <p class="text-muted small mb-0 mt-1">
+                        Your item has been added to your shopping cart.
+                    </p>
+                </div>
+
+            </div>
 
 
-    <!-- Bootstrap JS - only required for Bootstrap components -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+            <!-- Body -->
+            <div class="modal-body px-4 py-3">
 
-</body>
-</html>
+                <!-- Product Card -->
+                <div class="cart-product-card">
+
+                    <!-- Product Image -->
+                    <div class="cart-product-image">
+
+                        <img [src]="selecttedProduct?.productImageUrl"
+                             [alt]="selecttedProduct?.productName">
+
+                    </div>
+
+
+                    <!-- Product Information -->
+                    <div class="cart-product-info">
+
+                        <div class="d-flex justify-content-between gap-3">
+
+                            <div>
+
+                                <h5 class="fw-bold mb-1">
+                                    {{ selecttedProduct?.productName }}
+                                </h5>
+
+                                <p class="text-muted small mb-2">
+                                    Product added to your cart
+                                </p>
+
+                            </div>
+
+                            <!-- Remove -->
+                            <button type="button"
+                                    class="remove-btn"
+                                    title="Remove item">
+
+                                <i class="bi bi-trash3"></i>
+
+                            </button>
+
+                        </div>
+
+
+                        <!-- Price -->
+                        <div class="d-flex align-items-center justify-content-between">
+
+                            <div>
+
+                                <span class="text-muted small">
+                                    Price
+                                </span>
+
+                                <div class="fw-bold fs-5 text-success">
+                                    ₹{{ selecttedProduct?.productPrice }}
+                                </div>
+
+                            </div>
+
+
+                            <!-- Quantity -->
+                            <div>
+
+                                <span class="text-muted small d-block mb-1">
+                                    Quantity
+                                </span>
+
+                                <div class="quantity-control">
+
+                                    <button type="button"
+                                            class="quantity-btn" (click)="decreaseqty()">
+
+                                        <i class="bi bi-dash"></i>
+
+                                    </button>
+
+                                    <span class="quantity-value">
+                                        {{addcartitems.Quantity }}
+                                    </span>
+
+                                    <button type="button"
+                                            class="quantity-btn" (click)="increaseqty()">
+
+                                        <i class="bi bi-plus" ></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Benefits -->
+                <div class="row g-2 mt-3">
+
+                    <div class="col-md-4">
+
+                        <div class="cart-benefit">
+
+                            <i class="bi bi-truck"></i>
+
+                            <div>
+                                <strong>Fast Delivery</strong>
+                                <small>Quick doorstep delivery</small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="cart-benefit">
+
+                            <i class="bi bi-shield-check"></i>
+
+                            <div>
+                                <strong>Secure Payment</strong>
+                                <small>100% secure checkout</small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="cart-benefit">
+
+                            <i class="bi bi-arrow-repeat"></i>
+
+                            <div>
+                                <strong>Easy Returns</strong>
+                                <small>Simple return policy</small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Order Summary -->
+                <div class="cart-summary mt-4">
+
+                    <!-- <div class="d-flex justify-content-between mb-2">
+
+                        <span class="text-muted">
+                            Subtotal
+                        </span>
+
+                        <span class="fw-semibold">
+                            ₹{{ (selecttedProduct?.productPrice ?? 0) * addcartitems.Quantity }}
+                        </span>
+
+                    </div> -->
+
+
+                    <div class="d-flex justify-content-between mb-2">
+
+                        <span class="text-muted">
+                            Delivery
+                        </span>
+
+                        <span class="text-success fw-semibold">
+                            FREE
+                        </span>
+
+                    </div>
+
+
+                    <hr>
+
+
+                    <div class="d-flex justify-content-between align-items-center">
+
+                        <span class="fw-bold fs-5">
+                            Total
+                        </span>
+
+                        <span class="fw-bold fs-4 text-success">
+                            ₹{{ (selecttedProduct?.productPrice??0)* addcartitems.Quantity }}
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Footer -->
+            <div class="modal-footer border-0 px-4 pb-4 pt-2">
+
+               <button
+    type="button"
+    class="btn btn-light border rounded-3 px-4 py-2"
+    data-bs-dismiss="modal">
+
+    <i class="bi bi-arrow-left me-2"></i>
+    Continue Shopping
+
+</button>
+
+
+                <button type="button"
+                        class="btn btn-success rounded-3 px-4 py-2 fw-semibold" (click)="addCartitem(addcartitems)">
+
+                    Go to Cart
+                    <i class="bi bi-arrow-right ms-2"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+     ADD TO CART BUTTON
+========================= -->
+
+<button
+    type="button"
+    class="btn btn-success w-100"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#cartOffcanvas">
+
+    <i class="bi bi-cart-plus me-2"></i>
+    Add to Cart
+
+</button>
+
+
+<!-- =========================
+     CART OFFCANVAS
+========================= -->
+
+<!-- Cart Offcanvas -->
+<div
+    class="offcanvas offcanvas-end"
+    tabindex="-1"
+    id="cartOffcanvas"
+    aria-labelledby="cartOffcanvasLabel"
+    data-bs-backdrop="false">
+
+    <!-- Header -->
+    <div class="offcanvas-header border-bottom px-4 py-3">
+
+        <div>
+            <h5 class="offcanvas-title fw-bold mb-1" id="cartOffcanvasLabel">
+                <i class="bi bi-cart3 me-2 text-success"></i>
+                Shopping Cart
+            </h5>
+
+            <small class="text-muted">
+                3 items in your cart
+            </small>
+        </div>
+
+        <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas">
+        </button>
+
+    </div>
+
+
+    <!-- Body -->
+    <div class="offcanvas-body p-3" >
+<div *ngFor="let item of cartdetails()">
+
+        <!-- Item 1 -->
+        <div class="cart-side-item">
+
+            <div class="cart-side-image">
+                <img
+                    [src]="item.productImageUrl"
+                    [alt]="item.productName">
+            </div>
+
+            <div class="cart-side-content">
+
+                <div class="d-flex justify-content-between gap-2">
+
+                    <div>
+                        <h6 class="fw-semibold mb-1">
+                           {{item.productName}}
+                        </h6>
+
+                        <small class="text-muted">
+                            {{item.categoryName}}
+                        </small>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="btn btn-link text-danger p-0" (click)="removacart(item)">
+                        <i class="bi bi-trash3"></i>
+                    </button>
+
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mt-3">
+
+                    <div class="cart-quantity">
+
+                        <button type="button">
+                            <i class="bi bi-dash" (click)="decreaseCart(item)"></i>
+                        </button>
+
+                        <span>{{item.quantity}}</span>
+
+                        <button type="button" (click)="increaseCart(item)">
+                            <i class="bi bi-plus"></i>
+                        </button>
+
+                    </div>
+
+                    <strong>
+                        ₹{{item.productPrice* item.quantity}}
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+</div>
+
+   
+    </div>
+
+
+    <!-- Footer -->
+    <div class="cart-side-footer border-top p-4">
+
+        <div class="d-flex justify-content-between mb-2">
+            <span class="text-muted">
+                Subtotal
+            </span>
+
+            <strong>
+                ₹{{ getCartTotal() }}
+            </strong>
+        </div>
+
+        <div class="d-flex justify-content-between mb-3">
+            <span class="text-muted">
+                Delivery
+            </span>
+
+            <span class="text-success fw-semibold">
+                FREE
+            </span>
+        </div>
+
+        <hr>
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <span class="fw-bold">
+                Total
+            </span>
+
+            <strong class="fs-5">
+                ₹₹{{ getCartTotal() }}
+            </strong>
+        </div>
+
+
+        <!-- Continue Shopping -->
+        <button
+            type="button"
+            class="btn btn-light border w-100 mb-2"
+            data-bs-dismiss="offcanvas">
+
+            <i class="bi bi-arrow-left me-2"></i>
+            Continue Shopping
+
+        </button>
+
+
+        <!-- View Cart -->
+        <button
+            type="button"
+            class="btn btn-success w-100">
+
+            <i class="bi bi-cart3 me-2"></i>
+            View Cart
+
+        </button>
+
+
+        <div class="text-center mt-3">
+
+            <small class="text-muted">
+                <i class="bi bi-shield-check me-1"></i>
+                Secure & safe checkout
+            </small>
+
+        </div>
+
+    </div>
+
+</div>

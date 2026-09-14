@@ -1,0 +1,164 @@
+<div class="auth-page">
+
+    <!-- Background circles -->
+    <div class="bg-circle circle-1"></div>
+    <div class="bg-circle circle-2"></div>
+    <div class="bg-circle circle-3"></div>
+    <div class="bg-circle circle-4"></div>
+
+
+    <div class="container auth-container">
+
+        <div class="auth-card">
+
+
+            <!-- ================= LEFT SIDE ================= -->
+
+            <div class="auth-left">
+
+                <div class="brand-logo">
+                    <i class="bi bi-bag-heart"></i>
+                    FreshMart
+                </div>
+
+                <div class="left-content">
+
+                    <h1 class="welcome-title">
+                        Welcome Back!
+                    </h1>
+
+                    <p class="welcome-text">
+                        To keep connected with us please login
+                        with your personal information.
+                    </p>
+
+                    <a routerLink="/register"
+                       class="btn login-outline-btn">
+
+                        Create Account
+
+                    </a>
+
+                </div>
+
+                <div class="shopping-icon">
+                    <i class="bi bi-bag-heart"></i>
+                </div>
+
+            </div>
+
+
+            <!-- ================= RIGHT SIDE ================= -->
+
+            <div class="auth-right">
+
+                <div class="auth-form">
+
+                    <h2 class="form-title">
+                        Welcome Back
+                    </h2>
+
+                    <p class="form-subtitle">
+                        Login to continue your shopping journey
+                    </p>
+
+
+                    <!-- Social Login -->
+
+                    <div class="social-buttons">
+
+                        <button type="button" class="social-btn">
+                            <i class="bi bi-google"></i>
+                        </button>
+
+                        <button type="button" class="social-btn">
+                            <i class="bi bi-facebook"></i>
+                        </button>
+
+                        <button type="button" class="social-btn">
+                            <i class="bi bi-linkedin"></i>
+                        </button>
+
+                    </div>
+
+
+                    <!-- Divider -->
+
+                    <div class="divider">
+                        or login with email
+                    </div>
+
+
+                    <!-- Email -->
+<form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+                    <div class="input-group-custom">
+
+                        <i class="bi bi-phone"></i>
+
+
+                        <input type="number"
+                               class="custom-input"
+                               placeholder="mobile Number"  name="UserName"  [(ngModel)]="loginModel.UserName" required>
+
+                    </div>
+
+
+                    <!-- Password -->
+
+                    <div class="input-group-custom">
+
+                        <i class="bi bi-lock"></i>
+
+                        <input type="password"
+                               class="custom-input"
+                               placeholder="Password" [(ngModel)]="loginModel.UserPassword" name="UserPassword" #UserPassword="ngModel" required>
+
+                    </div>
+                      <button type="submit"
+                            class="submit-btn">
+
+                        Log In
+
+                    </button>
+
+</form>
+                    <!-- Forgot Password -->
+
+                    <div class="text-end mb-3">
+
+                        <a href="#"
+                           class="forgot-link">
+
+                            Forgot Password?
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- Login -->
+
+                  
+
+
+                    <!-- Register -->
+
+                    <div class="bottom-text">
+
+                        Don't have an account?
+
+                        <a routerLink="/register">
+                            Create Account
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
